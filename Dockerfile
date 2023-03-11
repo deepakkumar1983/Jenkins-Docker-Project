@@ -1,9 +1,9 @@
-FROM ubuntu:latest
-RUN apt install httpd
+FROM httpd
 RUN apt install zip
 RUN apt install unzip
-ADD https://www.free-css.com/assets/files/free-css-templates/download/page254/photogenic.zip /var/www/html/
-WORKDIR /var/www/html/
+ADD https://www.free-css.com/assets/files/free-css-templates/download/page254/photogenic.zip /usr/local/apache2/htdocs/
+WORKDIR /usr/local/apache2/htdocs/
+COPY . /usr/local/apache2/htdocs/
 RUN unzip photogenic.zip
 RUN cp -rvf photogenic/* .
 RUN rm -rf photogenic photogenic.zip
