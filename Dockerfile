@@ -1,7 +1,7 @@
 FROM ubuntu:latest
-RUN apt install -y httpd \
- zip\
- unzip
+RUN apt install -y httpd
+RUN apt install zip
+RUN apt install unzip
 ADD https://www.free-css.com/assets/files/free-css-templates/download/page254/photogenic.zip /var/www/html/
 WORKDIR /var/www/html/
 RUN unzip photogenic.zip
